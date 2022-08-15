@@ -160,6 +160,7 @@ public class PluginDelegate implements MethodChannel.MethodCallHandler, EventCha
      */
     public void initAd(MethodCall call, MethodChannel.Result result) {
         String appId = call.argument("appId");
+        GlobalSetting.setEnableCollectAppInstallStatus(false);
         GDTAdSdk.init(activity.getApplicationContext(), appId);
         result.success(true);
     }
